@@ -1,5 +1,17 @@
 {
+    "name": "friendsofwebso/log",
+    "description": "Log",
+    "autoload": {
+        "psr-4": {
+            "Webso\\": ""
+        },
+        "classmap": [
+            "src/"
+        ]
+    },
     "require": {
         "illuminate/log": "*"
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
