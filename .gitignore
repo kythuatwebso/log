@@ -1,0 +1,8 @@
+*
+!/**/
+/vendor/
+/logs/
+!src/**
+!composer.json
+!.gitignore
+!README.md
