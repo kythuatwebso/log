@@ -103,7 +103,16 @@ class Log
      */
     protected static function writeLog(string $level, $message, array $context = [])
     {
-        $levels = [
+        $levels = self::levels();
+
+        if (in_array($level, $levels)) {
+            (new self())->boot()->{$level}($message, $context);
+        }
+    }
+
+    public static function levels(): array
+    {
+        return [
             'debug',
             'info',
             'notice',
@@ -113,10 +122,6 @@ class Log
             'alert',
             'emergency',
         ];
-
-        if (in_array($level, $levels)) {
-            (new self())->boot()->{$level}($message, $context);
-        }
     }
 
     public static function debug($message, array $context = [])
