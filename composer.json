@@ -1,6 +1,7 @@
 {
     "name": "friendsofwebso/log",
     "description": "Log",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Webso\\": ""
