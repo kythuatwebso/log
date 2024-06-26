@@ -2,7 +2,7 @@
 
 ## Install
 
-```json
+```txt
 composer require friendsofwebso/log
 ```
 
@@ -29,4 +29,13 @@ composer require friendsofwebso/log
 // Log::critical('message', ['data' => $something]);
 // Log::alert('message', ['data' => $something]);
 // Log::emergency('message', ['data' => $something]);
+```
+
+### Optional - Use with ErrorHandler
+
+```php
+ErrorHandler::register()->setDefaultLogger(
+    \Webso\Log::make('path/file.log'),
+    (E_ERROR | E_PARSE)
+);
 ```
