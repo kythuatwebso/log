@@ -50,8 +50,10 @@ class Log
     {
         if (empty($this->path)) {
 
-            if (function_exists('cnf_get') && filled($pathConfig = cnf_get('path.log'))) {
-                $path = $pathConfig;
+            if (function_exists($cnfFind = '\Webso\Helper\cnf_find')) {
+
+                $path = call_user_func($cnfFind, 'path.log');
+
             } else {
                 $path = function_exists('path')
                     ? path()
